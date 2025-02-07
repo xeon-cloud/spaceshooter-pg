@@ -1,0 +1,25 @@
+{
+    "user": {
+        "asd": 12,
+        "coins": 0,
+        "lvl": 1,
+        "lvl_of_difficulty": 1,
+        "spaceship": "Ships/ship_lvl_1.png",
+        "volume": 0.5,
+        "bullets_count": {
+            "1, 2, 3, 4": 1,
+            "5, 6, 7, 8, 9": 2,
+            "10, 11, 12, 13, 15, 16, 17, 18, 19": 4
+        }
+    },
+    "stats": {
+        "Lvl costs": 12,
+        "Damage": 10,
+        "FireRate": 0.3,
+        "Cooldown": 3,
+        "Health": 200
+    },
+    "history": [
+
+    ]
+}
