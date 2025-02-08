@@ -108,10 +108,10 @@ class Laser(pygame.sprite.Sprite):  # Класс снаряда
 class Player(pygame.sprite.Sprite):  # Класс игрока
     def __init__(self, player_x):
         super().__init__()
-        self.image = pygame.image.load(methods.getSpaceship() if methods.getLvl() <= 20 else "Ships/ship_lvl_20.png")  # Пытался реализовать наклон корабля во время движения.
+        self.image = pygame.image.load(methods.getSpaceship() if methods.getLvl() <= 20 else "Ships/ship_lvl_20.png")
         self.image = pygame.transform.scale(self.image, (WIDTH, HEIGHT))
-        self.rect = self.image.get_rect()  # .                    В папке есть картинки с кораблем, наклоненным
-        self.rect.x = player_x  # .                               вправо и влево.
+        self.rect = self.image.get_rect()
+        self.rect.x = player_x
         self.rect.y = 550
         self.player_speed = 15
 
