@@ -343,10 +343,10 @@ def winGame():
 
     end.End_screen(screen, "victory", money, startNewGame, width=width, height=height)
 
-
+# Группы всех спрайтов.
 enemiesSprites = pygame.sprite.Group()
-lasersSprites = pygame.sprite.Group()  # Группы всех спрайтов.
-spaceShips = pygame.sprite.Group()  # Включил спрайт игрока в группу, т.к. не понял, как рисовать спрайт отдельно.
+lasersSprites = pygame.sprite.Group()
+spaceShips = pygame.sprite.Group()
 
 horizontal_border_up = pygame.sprite.Group()  # Создание группы верхней границы и экземпляра верхней границы.
 BorderUp(0, 0, 1000, 0)
