@@ -5,4 +5,4 @@
 
 **Сага Ярослав** - отрисовка, детализация, 1/2 меню
 
-#Created by Saga Yaroslav & Kadchenko Timofey
+# Created by Saga Yaroslav & Kadchenko Timofey
