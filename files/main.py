@@ -436,7 +436,7 @@ pauseMenu.menu.disable()
 rel = False
 reloadTime = time.time()
 
-pause_button = pygame.transform.scale(pygame.image.load('menu_images/pause_button.png'), (40, 40))
+pause_button = pygame.transform.scale(pygame.image.load('menu_images/pause_button.png'), (45, 45))
 pauseTime = 0
 
 super1 = pygame.transform.scale(pygame.image.load('menu_images/super1.png'), (50, 50))
@@ -641,7 +641,6 @@ if __name__ == '__main__':
         for element in lasersSprites:  # При столкновении лазера с границей лазер удаляется из группы спрайтов.
             if pygame.sprite.spritecollideany(element, horizontal_border_up):
                 lasersSprites.remove(element)
-
 
         renderHealth()
 
