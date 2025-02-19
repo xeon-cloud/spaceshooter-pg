@@ -11,11 +11,11 @@ class Panel:
         self.screen = screen
         self.width, self.height = width, height
         default_scale = [(0.25, 0.25)]
-
+        #Обьект темы
         mytheme = pygame_menu.Theme(background_color=(92, 62, 44),
                                      title_bar_style=pygame_menu.widgets.MENUBAR_STYLE_NONE, title_font_size=2)
         mytheme.widget_selection_effect = None
-
+        # Обьект меню
         self.menu = pygame_menu.Menu('Прокачка', width, height, theme=mytheme, center_content=False)
         self.menu.add.frame_v(50, 70)
 

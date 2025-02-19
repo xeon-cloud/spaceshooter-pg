@@ -28,6 +28,7 @@ class Panel:
         self.menu.mainloop(screen)
 
     def set_volume(self, value):
+        #меняем звук
         data = methods.getData()
         data["user"]["volume"] = value / 100
         pygame.mixer.music.set_volume(value / 100)

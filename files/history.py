@@ -25,7 +25,10 @@ class Panel:
         self.menu.mainloop(screen)
 
     def renderData(self):
-        self.table.add_row(['№ Игры', 'Дата', 'Продолжительность', 'Ступень', 'Статус'], cell_border_color='white', cell_align=pygame_menu.locals.ALIGN_CENTER)
+        # заполняем таблицу
+        self.table.add_row(['№ Игры', 'Дата', 'Продолжительность', 'Ступень', 'Статус'],
+                           cell_border_color='white',
+                           cell_align=pygame_menu.locals.ALIGN_CENTER)
         for i, j in enumerate(methods.loadHistory()):
             self.table.add_row([i + 1] + j, cell_border_color='white', cell_align=pygame_menu.locals.ALIGN_CENTER)
         
