@@ -642,7 +642,6 @@ if __name__ == '__main__':
             if pygame.sprite.spritecollideany(element, horizontal_border_up):
                 lasersSprites.remove(element)
 
-
         renderHealth()
 
         draw()  # В конце цикла отрисовываются все объекты.
