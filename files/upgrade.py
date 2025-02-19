@@ -90,6 +90,8 @@ class Panel:
     def render(self):
         methods.up_lvl()
 
+        #Обновляет показатели
+
         self.lvlLabel.set_title(f"Уровень: {methods.getLvl()}")
         self.coinsLabel.set_title(f"Баланс: {methods.getCoins()}$")
 
@@ -106,4 +108,6 @@ class Panel:
                                                 else methods.load_image("buy_button_unactive"))
 
     def Return(self):
+        #Возвращает в меню
+
         self.menu.disable()
