@@ -2,51 +2,51 @@ import json
 import os
 import pygame_menu
 
-def load_image(path, use_path=False):
+def load_image(path, use_path=False): #Загружает картинки
     if use_path:
         image_path = path
     else:
         image_path = os.path.join('menu_images', f'{path}.png')
-    image = pygame_menu.BaseImage(image_path=image_path)
-    return image
+    image = pygame_menu.BaseImage(image_path=image_path) #Выберает по пути
+    return image #Возвращает картинку
 
 
-def load_font(name):
+def load_font(name): #Загружает шрифты
     font_path = os.path.join("Fonts", f'{name}.ttf')
     return font_path
 
 
-def getData() -> dict:
+def getData() -> dict: #Возвращает дату игрока
     with open('base.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
-def dump(data):
+def dump(data): #Сохраняет дату игрока
     with open('base.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-def getCoins() -> int:
+def getCoins() -> int: #Возвращает текущее кол монет
     return getData()['user']['coins']
 
 
-def getLvl() -> int:
+def getLvl() -> int: #Возврщает текущий лвл
     return getData()['user']['lvl']
 
-def getLvlDiff() -> int:
+def getLvlDiff() -> int: #Возврщает текущий лвл сложности
     return getData()['user']['lvl_of_difficulty']
 
 
-def updateCoins(newValue: int):
+def updateCoins(newValue: int): #Присваивает значение монетам игрока
     data = getData()
     data['user']['coins'] = newValue
     dump(data)
 
-def stat_exist(stats):
+def stat_exist(stats): #Проверяет наличие передаваемой статистики
     return getData()["stats"][stats] if getData().get("stats") else 0
 
 
-def up_lvl():
+def up_lvl(): #Повышает статистики
     data = getData()
     if data["user"]["coins"] >= data["stats"]["Lvl costs"]:
         data["user"]["lvl"] += 1
@@ -73,15 +73,15 @@ def up_lvl():
     dump(data)
 
 
-def up_lvl_of_difficulty():
+def up_lvl_of_difficulty(): #Повышает уровень сложности
     data = getData()
     data["user"]["lvl_of_difficulty"] += 1
     dump(data)
 
-def getSpaceship():
+def getSpaceship(): #Возвращает текущий корабль
     return getData()['user']['spaceship']
 
-def getIndexShip():
+def getIndexShip(): #Возвращает индекс корабля для анимаций и коректирования пуль
     r = ''
     for i in getData()['user']['spaceship']:
         if i.isdigit():
@@ -89,10 +89,10 @@ def getIndexShip():
     return int(r)
 
 
-def getStatsElem(key: str):
+def getStatsElem(key: str): #Аналог Stat_exist
     return getData()["stats"][key]
 
-def getBulletCount():
+def getBulletCount(): #Возвращает количетсво выпускаемых пуль
     count = 0
     for i in getData()["user"]["bullets_count"]:
         spisok = i.split(", ")
@@ -103,16 +103,16 @@ def getBulletCount():
     return count
 
 
-def loadHistory():
+def loadHistory(): #Возвращает историю игр в виду словаря
     return getData()['history']
 
-def addNoteHistory(date, duration, status): # 1 - win, 2 - loose
+def addNoteHistory(date, duration, status): # 1 - win, 2 - loose. Записывает игру
     data = getData()
     data['history'].append([date, duration, f'{getLvlDiff()} -> {getLvlDiff() + 1}', 'Победа' if status == 1 else 'Поражение'])
     dump(data)
 
 
-def load_ship_image():
+def load_ship_image(): #Загружает картинку корабля
     global image_path
     ship_filename = getData()['user']['spaceship']
     ship_filepath = os.path.join("Ships", ship_filename)
