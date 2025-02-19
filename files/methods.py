@@ -103,7 +103,7 @@ def getBulletCount(): #Возвращает количетсво выпуска�
     return count
 
 
-def loadHistory(): #Возвращает историю игр в виду словаря
+def loadHistory(): #Возвращает историю игр
     return getData()['history']
 
 def addNoteHistory(date, duration, status): # 1 - win, 2 - loose. Записывает игру
